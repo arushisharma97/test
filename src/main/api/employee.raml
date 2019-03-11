@@ -1,0 +1,40 @@
+#%RAML 1.0
+title: employee
+baseUri: http://localhost:8081/empappdatabase
+/register-employee:
+  post:
+    body:
+      application/json:
+        example:
+          {
+            "EmployeeID": "123",
+            "EmployeeName": "Arushi",
+            "Gender": "F",
+            "Age": "21"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "Status":200,
+                "Message":"Success"
+              }    
+/delete-employee:
+  /{empID}:
+    description: To delete the employee record
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                {
+                  "Status":200,
+                  "Message":"Success"
+                }
+                
+              
+    
+    

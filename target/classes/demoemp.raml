@@ -1,0 +1,53 @@
+#%RAML 1.0
+title: demoemp
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/e42d5c3b-7815-438c-a2d5-d88ccb550c70/empappconsumer # baseUri: http://localhost:8082/empappconsumer
+/add:
+  post:
+    body:
+      application/json:
+        example:
+          {
+            "EmployeeID":"123",
+            "EmployeeName":"Arushi",
+            "Gender":"F",
+            "Age":"21"
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "Status":200,
+                "Message":"Success"
+              }
+/delete:
+  get:
+    queryParameters:
+      empid:
+        description: the id of the employee
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "Status":200,
+                "Message":"row deleted"
+              }
+/deletemethod:
+  /{empid}:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "Status":200,
+                "Message":"row deleted using delete method"
+              }
+
+
+
+
